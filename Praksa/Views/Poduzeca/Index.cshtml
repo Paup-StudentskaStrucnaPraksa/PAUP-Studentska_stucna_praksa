@@ -1,0 +1,42 @@
+﻿@using Praksa.Models
+@model IEnumerable<Poduzeca>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lista poduzeca</title>
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Naziv Poduzeća</th>
+                <th>Adresa</th>
+                <th>Mail</th>
+                <th>URL</th>
+                <th>Telefon</th>
+                <th>Faks</th>
+                <th>Odgovorna osoba</th>
+                <th>Kratki opis</th>
+            </tr>
+            @foreach (Poduzeca p in Model)
+            {
+                <tr>
+                    <td>@p.nazivPoduzeca</td>
+                    <td>@p.adresa</td>
+                    <td>@p.mail</td>
+                    <td>@p.url</td>
+                    <td>@p.telefon</td>
+                    <td>@p.faks</td>
+                    <td>@p.odgovornaOsoba</td>
+                    <td>@p.kratkiOpisPoduzeca</td>
+                </tr>
+            }
+        </table>
+        <p><a class="btn btn-primary" href="@Url.Action("Predlozi", "Poduzeca")">Predloži poduzeće</a></p>
+    </div>
+</body>
+</html>

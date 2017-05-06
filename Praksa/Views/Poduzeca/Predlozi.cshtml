@@ -1,0 +1,53 @@
+﻿@using Praksa.Models
+@model Poduzeca
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Predolzi</title>
+</head>
+<body>
+    <div>
+        <h1>Prijedlog novog poduzeća</h1>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+        <table class="table">
+            <tr>
+                <td>@Html.Label("Naziv poduzeća")</td>
+                <td>@Html.TextBoxFor(model => model.nazivPoduzeca, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Adresa")</td>
+                <td>@Html.TextBoxFor(model => model.adresa, new { @class = "form-control" })</td>
+            <tr>
+                <td>@Html.Label("Mail")</td>
+                <td>@Html.TextBoxFor(model => model.mail, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("URL")</td>
+                <td>@Html.TextBoxFor(model => model.url, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Faks")</td>
+                <td>@Html.TextBoxFor(model => model.faks, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Odgovorna Osoba")</td>
+                <td>@Html.TextBoxFor(model => model.odgovornaOsoba, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Kratki opis poduzeca")</td>
+                <td>@Html.TextBoxFor(model => model.kratkiOpisPoduzeca, new { @class = "form-control" })</td>
+            </tr>
+        </table>
+        <p><input type="submit" value="Predloži" class="btn btn-primary" /></p>
+    </div>
+    }
+</body>
+</html>
