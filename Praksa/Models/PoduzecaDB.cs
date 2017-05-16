@@ -23,7 +23,7 @@ namespace Praksa.Models
                     telefon = "012345",
                     faks = "1902874",
                     odgovornaOsoba = "ImeODgovorneOsobe",
-                    kratkiOpisPoduzeca = "Opis poduzeca"
+                    opisPoduzeca = "Opis poduzeca"
                 });
 
                 lista.Add(new Poduzeca
@@ -35,7 +35,7 @@ namespace Praksa.Models
                     telefon = "01212356",
                     faks = "190512",
                     odgovornaOsoba = "ImeODgovorneOsobe",
-                    kratkiOpisPoduzeca = "Opis poduzeca"
+                    opisPoduzeca = "Opis poduzeca"
                 });
 
                 lista.Add(new Poduzeca
@@ -47,7 +47,7 @@ namespace Praksa.Models
                     telefon = "0122348",
                     faks = "1902874234",
                     odgovornaOsoba = "ImeODgovorneOsobe",
-                    kratkiOpisPoduzeca = "Opis poduzeca"
+                    opisPoduzeca = "Opis poduzeca"
                 });
             }
         }

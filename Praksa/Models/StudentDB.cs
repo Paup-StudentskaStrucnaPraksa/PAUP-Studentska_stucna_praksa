@@ -20,9 +20,9 @@ namespace Praksa.Models
                     prezime = "Jurić",
                     adresaStanovanja = "adresa stanovanja1",
                     mail="jura.juric@mail.com",
-                    telefon=000000003,
-                    smjerStudija = SmjerStudija.Računarstvo,
-                    godinaStudija = 2,
+                    telefon="000000003",
+                    //smjerStudija = SmjerStudija.Računarstvo,
+                    //godinaStudija = 2,
                     korisnickoIme="Asdf",
                     lozinka="apw947et8"
                 });
@@ -33,9 +33,9 @@ namespace Praksa.Models
                     prezime = "Markić",
                     adresaStanovanja = "adresa stanovanja2",
                     mail = "marko.markic@mail.com",
-                    telefon = 000000004,
-                    smjerStudija = SmjerStudija.Računarstvo,
-                    godinaStudija = 2,
+                    telefon = "000000004",
+                    //smjerStudija = SmjerStudija.Računarstvo,
+                    //godinaStudija = 2,
                     korisnickoIme = "Fdsa",
                     lozinka = "se0h4t9ws"
                 });
@@ -46,9 +46,9 @@ namespace Praksa.Models
                     prezime = "Anić",
                     adresaStanovanja = "adresa stanovanja3",
                     mail = "ana.anic@mail.com",
-                    telefon = 000000005,
-                    smjerStudija = SmjerStudija.Računarstvo,
-                    godinaStudija = 2,
+                    telefon = "000000005",
+                    //smjerStudija = SmjerStudija.Računarstvo,
+                    //godinaStudija = 2,
                     korisnickoIme = "Sdfa",
                     lozinka = "qwve239"
                 });

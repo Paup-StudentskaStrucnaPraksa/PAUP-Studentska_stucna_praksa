@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Praksa.Models
 {
+    [Table("poduzeca")]
     public class Poduzeca
     {
+        [Key]
         public string nazivPoduzeca { get; set; }
         public string adresa { get; set; }
         public string mail { get; set; }
@@ -14,6 +18,6 @@ namespace Praksa.Models
         public string telefon { get; set; }
         public string faks { get; set; }
         public string odgovornaOsoba { get; set; }
-        public string kratkiOpisPoduzeca { get; set; }
+        public string opisPoduzeca { get; set; }
     }
 }
