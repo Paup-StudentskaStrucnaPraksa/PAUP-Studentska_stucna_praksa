@@ -1,5 +1,4 @@
-﻿@using Praksa.Models
-@model IEnumerable<Poduzeca>
+﻿@model IEnumerable<Praksa.Models.Poduzeca>
 
 
 <!DOCTYPE html>
@@ -7,36 +6,75 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Lista poduzeca</title>
+    <title>Index</title>
 </head>
 <body>
-    <div>
-        <table class="table">
-            <tr>
-                <th>Naziv Poduzeća</th>
-                <th>Adresa</th>
-                <th>Mail</th>
-                <th>URL</th>
-                <th>Telefon</th>
-                <th>Faks</th>
-                <th>Odgovorna osoba</th>
-                <th>Kratki opis</th>
-            </tr>
-            @foreach (Poduzeca p in Model)
-            {
-                <tr>
-                    <td>@p.nazivPoduzeca</td>
-                    <td>@p.adresa</td>
-                    <td>@p.mail</td>
-                    <td>@p.url</td>
-                    <td>@p.telefon</td>
-                    <td>@p.faks</td>
-                    <td>@p.odgovornaOsoba</td>
-                    <td>@p.kratkiOpisPoduzeca</td>
-                </tr>
-            }
-        </table>
-        <p><a class="btn btn-primary" href="@Url.Action("Predlozi", "Poduzeca")">Predloži poduzeće</a></p>
-    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nazivPoduzeca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.faks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.odgovornaOsoba)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.opisPoduzeca)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.nazivPoduzeca)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.faks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.odgovornaOsoba)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.opisPoduzeca)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.nazivPoduzeca }) |
+                @Html.ActionLink("Details", "Details", new { id=item.nazivPoduzeca }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.nazivPoduzeca })
+            </td>
+        </tr>
+    }
+    
+    </table>
 </body>
 </html>
