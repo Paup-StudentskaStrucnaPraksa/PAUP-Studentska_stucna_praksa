@@ -1,9 +1,11 @@
-﻿@model Praksa.Models.Student
+﻿
+@model Praksa.Models.Student
+
 
 @{
-    Layout = null;
-}
+    Layout = "~/Views/Shared/_mylajout.cshtml";
 
+}
 <!DOCTYPE html>
 
 <html>
@@ -13,11 +15,11 @@
 </head>
 <body>
     <div>
-        <h4>Student</h4>
+            <h4>Student</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.ime)
+                @Html.DisplayNameFor(model => model.ime):
             </dt>
     
             <dd>
@@ -25,7 +27,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.prezime)
+                @Html.DisplayNameFor(model => model.prezime):
             </dt>
     
             <dd>
@@ -33,7 +35,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.adresaStanovanja)
+                @Html.DisplayNameFor(model => model.adresaStanovanja):
             </dt>
     
             <dd>
@@ -41,7 +43,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.mail)
+                @Html.DisplayNameFor(model => model.mail):
             </dt>
     
             <dd>
@@ -49,7 +51,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.telefon)
+                @Html.DisplayNameFor(model => model.telefon):
             </dt>
     
             <dd>
@@ -57,7 +59,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.smjerStudija)
+                @Html.DisplayNameFor(model => model.smjerStudija):
             </dt>
     
             <dd>
@@ -65,34 +67,22 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.godinaStudija)
+                @Html.DisplayNameFor(model => model.godinaStudija):
             </dt>
     
             <dd>
                 @Html.DisplayFor(model => model.godinaStudija)
             </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.korisnickoIme)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.korisnickoIme)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.lozinka)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.lozinka)
-            </dd>
+          
     
         </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.maticniBroj }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+      
+       
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.maticniBroj }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+       </div>
 </body>
 </html>

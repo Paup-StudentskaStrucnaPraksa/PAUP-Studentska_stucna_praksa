@@ -1,7 +1,9 @@
 ﻿@model Praksa.Models.Poduzeca
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_mylajout.cshtml";
+
+
 }
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.adresa)
+                @Html.DisplayNameFor(model => model.adresa):
             </dt>
     
             <dd>
@@ -25,7 +27,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.mail)
+                @Html.DisplayNameFor(model => model.mail):
             </dt>
     
             <dd>
@@ -33,7 +35,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.url)
+                @Html.DisplayNameFor(model => model.url):
             </dt>
     
             <dd>
@@ -41,7 +43,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.telefon)
+                @Html.DisplayNameFor(model => model.telefon):
             </dt>
     
             <dd>
@@ -49,7 +51,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.faks)
+                @Html.DisplayNameFor(model => model.faks):
             </dt>
     
             <dd>
@@ -57,7 +59,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.odgovornaOsoba)
+                @Html.DisplayNameFor(model => model.odgovornaOsoba):
             </dt>
     
             <dd>
@@ -65,7 +67,7 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.opisPoduzeca)
+                @Html.DisplayNameFor(model => model.opisPoduzeca):
             </dt>
     
             <dd>

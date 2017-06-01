@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Praksa</title>
+    <meta charset="utf-8" />
+    @*@<link rel="stylesheet" type="text/css" href=@Url.Content("~Content/Mojtemplet/style/style.css") />*@
+    @Styles.Render("~/Content/Mojtemplet/style/style.css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <div id="logo_text">
+                        <!-- class="logo_colour", allows you to change the colour of the text -->
+                        <h1>@Html.ActionLink("Praksa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })<span class="logo_colour"></span></h1>
+                        <span class="left"><img src="~/Content/Mojtemplet/style/mev_logo.jpg" alt="example graphic" /></span>
+                    </div>
+                </div>
+                <div id="menubar" >
+                    <ul  id="menu">
+                        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                        <li >@Html.ActionLink("Administracija", "Index", "Administracija", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca")</li>
+                        
+                        <li>@Html.ActionLink("Create New(Administracija)", "Create","Administracija")</li>
+                        <li>@Html.ActionLink("Create New(Poduzeca)", "Create","Poduzeca")</li>
+                        <li>@Html.Partial("_LoginPartial")</li>
+                        
+
+                    </ul>
+
+                </div>
+               
+            </div>
+            <div>
+                @RenderBody()
+            </div>
+          
+           
+        </div>
+       
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>

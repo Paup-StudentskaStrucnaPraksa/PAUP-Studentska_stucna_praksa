@@ -1,12 +1,17 @@
 ﻿@model IEnumerable<Praksa.Models.Student>
 
+@{
+    Layout = "~/Views/Shared/_mylajout.cshtml";
 
+ 
+   
+}
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
     <p>
@@ -82,5 +87,6 @@
     }
     
     </table>
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>

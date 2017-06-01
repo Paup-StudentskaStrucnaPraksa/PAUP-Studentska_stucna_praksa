@@ -227,6 +227,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Mojtemplet\style\back.png" />
+    <Content Include="Content\Mojtemplet\style\bullet.png" />
+    <Content Include="Content\Mojtemplet\style\footer.png" />
+    <Content Include="Content\Mojtemplet\style\graphic.png" />
+    <Content Include="Content\Mojtemplet\style\link.png" />
+    <Content Include="Content\Mojtemplet\style\mev_logo.jpg" />
+    <Content Include="Content\Mojtemplet\style\search.png" />
+    <Content Include="Content\Mojtemplet\style\side_back.png" />
+    <Content Include="Content\Mojtemplet\style\side_base.png" />
+    <Content Include="Content\Mojtemplet\style\side_top.png" />
+    <Content Include="Content\Mojtemplet\style\style.css" />
+    <Content Include="Content\Mojtemplet\style\tab.png" />
+    <Content Include="Content\Mojtemplet\style\tab_selected.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -293,6 +306,8 @@
     <Content Include="Views\Administracija\Details.cshtml" />
     <Content Include="Views\Administracija\Edit.cshtml" />
     <Content Include="Views\Administracija\Index.cshtml" />
+    <Content Include="Views\Shared\_mylajout.cshtml" />
+    <Content Include="Views\Shared\_MyLayoutView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
