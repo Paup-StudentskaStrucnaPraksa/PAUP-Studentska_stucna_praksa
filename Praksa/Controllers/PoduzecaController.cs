@@ -10,6 +10,7 @@ using Praksa.Models;
 
 namespace Praksa.Controllers
 {
+    [Authorize]
     public class PoduzecaController : Controller
     {
         private PraksaDbContext db = new PraksaDbContext();
