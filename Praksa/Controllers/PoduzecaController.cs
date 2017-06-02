@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Praksa.Models;
+using Praksa.Reports;
+using System.IO;
 
 namespace Praksa.Controllers
 {
@@ -114,6 +116,21 @@ namespace Praksa.Controllers
             db.poduzeca.Remove(poduzeca);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public FileStreamResult Ispisi()
+        {
+            // EF - lista sa filtriranjem
+            var popis = from s in db.poduzeca select s;
+
+            //ToList() je bitan ako želimo izbjeći deferred execution i lazy loading mehanizme EF-a
+            AdministracijaReport r = new AdministracijaReport(popis.ToList());
+            return new FileStreamResult(new MemoryStream(r.Podaci), "application/pdf");
+
+            // ovako odmah ide download
+            // return File(path, "application/pdf", "Popis_studenata.pdf");
+
+            // ovako se otvara unutar preglednika
+            // return File(path, "application/pdf");
         }
 
         protected override void Dispose(bool disposing)
