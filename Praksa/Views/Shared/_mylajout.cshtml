@@ -23,11 +23,16 @@
                 <div id="menubar" >
                     <ul  id="menu">
                         <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-                        <li >@Html.ActionLink("Administracija", "Index", "Administracija", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca")</li>
-                        
-                        <li>@Html.ActionLink("Create New(Administracija)", "Create","Administracija")</li>
-                        <li>@Html.ActionLink("Create New(Poduzeca)", "Create","Poduzeca")</li>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li>@Html.ActionLink("Administracija", "Index", "Administracija", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca")</li>
+                        }
+
+                       
                         <li>@Html.Partial("_LoginPartial")</li>
                         
 

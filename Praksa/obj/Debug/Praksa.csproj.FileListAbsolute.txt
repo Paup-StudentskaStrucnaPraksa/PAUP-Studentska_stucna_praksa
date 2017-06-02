@@ -247,3 +247,4 @@ C:\Users\simon\Desktop\PAUP_29_05_2017_1pokusaj\PAUP-Studentska_stucna_praksa-ma
 C:\Users\simon\Desktop\PAUP_29_05_2017_1pokusaj\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
 C:\Users\simon\Desktop\PAUP_29_05_2017_1pokusaj\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.dll
 C:\Users\simon\Desktop\PAUP_29_05_2017_1pokusaj\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.pdb
+C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache

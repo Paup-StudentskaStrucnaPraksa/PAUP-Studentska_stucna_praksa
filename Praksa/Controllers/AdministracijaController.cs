@@ -10,6 +10,7 @@ using Praksa.Models;
 
 namespace Praksa.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdministracijaController : Controller
     {
         private PraksaDbContext db = new PraksaDbContext();
