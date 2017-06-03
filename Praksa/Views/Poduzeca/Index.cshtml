@@ -41,10 +41,20 @@
             <th>
                 @Html.DisplayNameFor(model => model.opisPoduzeca)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.brojStudenata)
+            </th>
+            @if (User.IsInRole("admin"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.aktivno)
+                </th>
+            }
             <th></th>
         </tr>
     
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <th>
                 @Html.DisplayFor(modelItem => item.nazivPoduzeca)
@@ -71,9 +81,26 @@
                 @Html.DisplayFor(modelItem => item.opisPoduzeca)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.nazivPoduzeca }) |
-                @Html.ActionLink("Details", "Details", new { id=item.nazivPoduzeca }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.nazivPoduzeca })
+                @Html.DisplayFor(modelItem => item.brojStudenata)
+            </td>
+            
+            @if (User.IsInRole("admin"))
+            {
+                <td>
+                    @Html.DisplayFor(model => item.aktivno)
+                </td>
+            }
+
+            <td>
+                @if (User.IsInRole("admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.nazivPoduzeca })<text> | </text>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.nazivPoduzeca })
+                }
+                @if (User.IsInRole("student"))
+                {
+                    @Html.ActionLink("Prijavi", "Prijavi", new { id = item.nazivPoduzeca })
+                }
             </td>
         </tr>
     }

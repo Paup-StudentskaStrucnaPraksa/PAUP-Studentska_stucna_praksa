@@ -117,6 +117,7 @@ namespace Praksa.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public FileStreamResult Ispisi()
         {
             // EF - lista sa filtriranjem

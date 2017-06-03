@@ -334,3 +334,5 @@ C:\Users\simon\Desktop\Login\PAUP-Studentska_stucna_praksa-master\Praksa\bin\Mic
 C:\Users\simon\Desktop\Login\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
 C:\Users\simon\Desktop\Login\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.dll
 C:\Users\simon\Desktop\Login\PAUP-Studentska_stucna_praksa-master\Praksa\obj\Debug\Praksa.pdb
+C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\itextsharp.dll
+C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\itextsharp.xml

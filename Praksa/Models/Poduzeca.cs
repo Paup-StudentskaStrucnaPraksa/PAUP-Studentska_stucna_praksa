@@ -19,5 +19,7 @@ namespace Praksa.Models
         public string faks { get; set; }
         public string odgovornaOsoba { get; set; }
         public string opisPoduzeca { get; set; }
+        public int brojStudenata { get; set; }
+        public bool aktivno { get; set; }
     }
 }

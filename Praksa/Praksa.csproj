@@ -305,7 +305,6 @@
     <Content Include="Views\Poduzeca\Predlozi.cshtml" />
     <Content Include="Views\Poduzeca\Create.cshtml" />
     <Content Include="Views\Poduzeca\Delete.cshtml" />
-    <Content Include="Views\Poduzeca\Details.cshtml" />
     <Content Include="Views\Poduzeca\Edit.cshtml" />
     <Content Include="Views\Administracija\Create.cshtml" />
     <Content Include="Views\Administracija\Delete.cshtml" />
@@ -314,6 +313,7 @@
     <Content Include="Views\Administracija\Index.cshtml" />
     <Content Include="Views\Shared\_mylajout.cshtml" />
     <Content Include="Views\Shared\_MyLayoutView.cshtml" />
+    <Content Include="Views\Poduzeca\Prijavi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

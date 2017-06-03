@@ -18,13 +18,15 @@ namespace Praksa.Controllers
         private PraksaDbContext db = new PraksaDbContext();
 
         // GET: Poduzeca
+        
         public ActionResult Index()
         {
             return View(db.poduzeca.ToList());
         }
 
-        // GET: Poduzeca/Details/5
-        public ActionResult Details(string id)
+
+
+        public ActionResult Prijavi(string id)
         {
             if (id == null)
             {
@@ -36,6 +38,12 @@ namespace Praksa.Controllers
                 return HttpNotFound();
             }
             return View(poduzeca);
+        }
+
+        [HttpPost]
+        public ActionResult Prijavi()
+        {
+            return RedirectToAction("Index");
         }
 
         // GET: Poduzeca/Create
@@ -60,7 +68,7 @@ namespace Praksa.Controllers
 
             return View(poduzeca);
         }
-
+        [Authorize(Roles = ("admin"))]
         // GET: Poduzeca/Edit/5
         public ActionResult Edit(string id)
         {
@@ -80,6 +88,7 @@ namespace Praksa.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = ("admin"))]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
         {
@@ -93,6 +102,7 @@ namespace Praksa.Controllers
         }
 
         // GET: Poduzeca/Delete/5
+        [Authorize(Roles = ("admin"))]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -109,6 +119,7 @@ namespace Praksa.Controllers
 
         // POST: Poduzeca/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = ("admin"))]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
@@ -117,6 +128,7 @@ namespace Praksa.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public FileStreamResult Ispisi()
         {
             // EF - lista sa filtriranjem
