@@ -11,7 +11,7 @@ namespace Praksa.Models
     public class Student
     {
         [Key]
-        public int maticniBroj { get; set; }
+        public string maticniBroj { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }
         public string adresaStanovanja { get; set; }

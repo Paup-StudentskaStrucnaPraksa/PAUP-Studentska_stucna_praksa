@@ -41,6 +41,7 @@ namespace Praksa.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "student")]
         public ActionResult Prijavi()
         {
             return RedirectToAction("Index");
