@@ -335,3 +335,4 @@ C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\Microso
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.dll
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.pdb
+C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
