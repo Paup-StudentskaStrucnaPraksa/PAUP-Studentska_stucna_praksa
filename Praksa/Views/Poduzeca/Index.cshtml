@@ -12,9 +12,7 @@
     <title>Index</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+   
     <table class="table">
         <tr>
             <th>
@@ -106,6 +104,9 @@
     }
     
     </table>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
     <p>
         <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
     </p>
