@@ -16,82 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admin`
---
-
-DROP TABLE IF EXISTS `admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
-  `ime` varchar(20) NOT NULL,
-  `prezime` varchar(20) NOT NULL,
-  `korisnickoIme` varchar(20) NOT NULL,
-  `sifra` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `admin`
---
-
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'Ivo','Ivic','ivoivic','123');
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `obavlja praksu`
---
-
-DROP TABLE IF EXISTS `obavlja praksu`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `obavlja praksu` (
-  `IDprakse` int(11) NOT NULL,
-  `MBRstudenta` int(11) DEFAULT NULL,
-  `bilješke` varchar(100) DEFAULT NULL,
-  `datoteke` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`IDprakse`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `obavlja praksu`
---
-
-LOCK TABLES `obavlja praksu` WRITE;
-/*!40000 ALTER TABLE `obavlja praksu` DISABLE KEYS */;
-/*!40000 ALTER TABLE `obavlja praksu` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `obavljena praksa`
---
-
-DROP TABLE IF EXISTS `obavljena praksa`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `obavljena praksa` (
-  `MBRstudenta` int(11) DEFAULT NULL,
-  `IDPrakse` int(11) NOT NULL,
-  `Datoteke` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`IDPrakse`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `obavljena praksa`
---
-
-LOCK TABLES `obavljena praksa` WRITE;
-/*!40000 ALTER TABLE `obavljena praksa` DISABLE KEYS */;
-/*!40000 ALTER TABLE `obavljena praksa` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `poduzeca`
 --
 
@@ -126,6 +50,32 @@ INSERT INTO `poduzeca` VALUES (1,'Prvo','M.Gupca 20','prvo@prvo.hr','prvo.hr','0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `praksa`
+--
+
+DROP TABLE IF EXISTS `praksa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `praksa` (
+  `idpraksa` int(11) NOT NULL AUTO_INCREMENT,
+  `MBRStudenta` varchar(13) NOT NULL,
+  `id_poduzeca` int(11) NOT NULL,
+  `zavrseno` tinyint(4) DEFAULT '0',
+  `zakljucano` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`idpraksa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `praksa`
+--
+
+LOCK TABLES `praksa` WRITE;
+/*!40000 ALTER TABLE `praksa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `praksa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `student`
 --
 
@@ -156,31 +106,6 @@ LOCK TABLES `student` WRITE;
 INSERT INTO `student` VALUES ('0','admin','admin','admin','admin@admin.com','admin','admin',0,'admin','!2Asdf'),('1234567890123','Ana','Anic','anina adresa','ana@anic.com','123456','Racunalstvo',2,'ana','!2Asdf');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `vrtsekorisnika`
---
-
-DROP TABLE IF EXISTS `vrtsekorisnika`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `vrtsekorisnika` (
-  `id_VrtsaKorisnika` int(11) NOT NULL,
-  `administrator` varchar(20) DEFAULT NULL,
-  `voditelj_prakse` varchar(20) DEFAULT NULL,
-  `student` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id_VrtsaKorisnika`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `vrtsekorisnika`
---
-
-LOCK TABLES `vrtsekorisnika` WRITE;
-/*!40000 ALTER TABLE `vrtsekorisnika` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vrtsekorisnika` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -191,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-04 16:20:40
+-- Dump completed on 2017-06-04 17:04:51
