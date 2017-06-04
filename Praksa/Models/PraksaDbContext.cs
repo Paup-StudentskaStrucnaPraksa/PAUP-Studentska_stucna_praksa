@@ -10,5 +10,6 @@ namespace Praksa.Models
     {
         public DbSet<Poduzeca> poduzeca { get; set; }
         public DbSet<Student> studenti { get; set; }
+        public DbSet<Prakse> prakse { get; set; }
     }
 }

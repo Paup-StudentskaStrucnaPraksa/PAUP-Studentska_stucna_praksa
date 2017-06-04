@@ -25,7 +25,7 @@ namespace Praksa.Controllers
             {
                 List<Poduzeca> lista = new List<Poduzeca>();
                 foreach (Poduzeca p in db.poduzeca.ToList()) {
-                    if (!p.aktivno)
+                    if (p.aktivno)
                         lista.Add(p);
                 }
                 return View(lista);
@@ -35,8 +35,8 @@ namespace Praksa.Controllers
         }
 
 
-
-        public ActionResult Prijavi(string id)
+        [Authorize(Roles = "student")]
+        public ActionResult Prijavi(int? id)
         {
             if (id == null)
             {
@@ -50,10 +50,21 @@ namespace Praksa.Controllers
             return View(poduzeca);
         }
 
-        [HttpPost]
         [Authorize(Roles = "student")]
-        public ActionResult Prijavi()
+        public ActionResult PrijaviP(int? id, string mail)
         {
+            Student student = db.studenti.Single(s => s.mail == mail);
+            Poduzeca poduzeca = db.poduzeca.Find(id);
+            Prakse prakse = new Prakse()
+            {
+                MBRStudenta = student.maticniBroj,
+                id_poduzeca = poduzeca.id_poduzeca,
+                godina = DateTime.Now.Year
+            };
+
+            db.prakse.Add(prakse);
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
@@ -81,7 +92,7 @@ namespace Praksa.Controllers
         }
         [Authorize(Roles = ("admin"))]
         // GET: Poduzeca/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -114,7 +125,7 @@ namespace Praksa.Controllers
 
         // GET: Poduzeca/Delete/5
         [Authorize(Roles = ("admin"))]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -132,7 +143,7 @@ namespace Praksa.Controllers
         [HttpPost, ActionName("Delete")]
         [Authorize(Roles = ("admin"))]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Poduzeca poduzeca = db.poduzeca.Find(id);
             db.poduzeca.Remove(poduzeca);
@@ -164,8 +175,9 @@ namespace Praksa.Controllers
             }
             base.Dispose(disposing);
         }
+
         [Authorize (Roles = "admin")]
-        public ActionResult AktivirajDeaktiviraj(string id) {
+        public ActionResult AktivirajDeaktiviraj(int? id) {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

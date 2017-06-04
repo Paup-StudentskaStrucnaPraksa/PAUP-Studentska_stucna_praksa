@@ -29,7 +29,8 @@
                         }
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca")</li>
+                            <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Praksa", "Index", "Prakse", new { area = "" }, new { @class = "navbar-brand" })</li>
                         }
 
                        

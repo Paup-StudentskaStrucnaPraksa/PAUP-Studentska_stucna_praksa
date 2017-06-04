@@ -14,9 +14,10 @@
     <title>Prijavi</title>
 </head>
 <body>
-    <div>
         <h4>Prijavi praksu</h4>
         <hr />
+        @using (Html.BeginForm())
+        {
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.nazivPoduzeca):
@@ -82,10 +83,11 @@
             </dd>
 
         </dl>
-    </div>
+
     <p>
-        <input type="submit" value="Prijavi" class="btn btn-default" /> |
+        @Html.ActionLink("Prijavi", "PrijaviP", new { id = Model.id_poduzeca, mail=User.Identity.Name }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
+}
 </body>
 </html>

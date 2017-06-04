@@ -11,6 +11,7 @@ namespace Praksa.Models
     public class Poduzeca
     {
         [Key]
+        public int id_poduzeca { get; set; }
         public string nazivPoduzeca { get; set; }
         public string adresa { get; set; }
         public string mail { get; set; }

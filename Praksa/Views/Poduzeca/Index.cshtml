@@ -92,20 +92,20 @@
             <td>
                 @if (User.IsInRole("admin"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.nazivPoduzeca })<text> | </text>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
                     if (item.aktivno)
                     {
-                        @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.nazivPoduzeca })
+                        @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
                     }
                     else
                     {
-                        @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.nazivPoduzeca })
+                        @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
                     }
 
                 }
                 @if (User.IsInRole("student"))
                 {
-                    @Html.ActionLink("Prijavi", "Prijavi", new { id = item.nazivPoduzeca })
+                    @Html.ActionLink("Prijavi", "Prijavi", new { id = item.id_poduzeca })
                 }
             </td>
         </tr>
