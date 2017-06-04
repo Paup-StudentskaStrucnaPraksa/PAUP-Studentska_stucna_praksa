@@ -304,9 +304,7 @@
     <Content Include="Views\Poduzeca\Create.cshtml" />
     <Content Include="Views\Poduzeca\Delete.cshtml" />
     <Content Include="Views\Poduzeca\Edit.cshtml" />
-    <Content Include="Views\Administracija\Create.cshtml" />
     <Content Include="Views\Administracija\Delete.cshtml" />
-    <Content Include="Views\Administracija\Details.cshtml" />
     <Content Include="Views\Administracija\Edit.cshtml" />
     <Content Include="Views\Administracija\Index.cshtml" />
     <Content Include="Views\Shared\_mylajout.cshtml" />

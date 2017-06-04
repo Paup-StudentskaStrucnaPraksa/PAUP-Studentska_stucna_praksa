@@ -23,46 +23,9 @@ namespace Praksa.Controllers
             return View(db.studenti.ToList());
         }
 
-        // GET: Administracija/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Student student = db.studenti.Find(id);
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-            return View(student);
-        }
-
-        // GET: Administracija/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Administracija/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "maticniBroj,ime,prezime,adresaStanovanja,mail,telefon,smjerStudija,godinaStudija,korisnickoIme,lozinka")] Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                db.studenti.Add(student);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(student);
-        }
 
         // GET: Administracija/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -92,8 +55,7 @@ namespace Praksa.Controllers
             return View(student);
         }
 
-        // GET: Administracija/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -107,10 +69,10 @@ namespace Praksa.Controllers
             return View(student);
         }
 
-        // POST: Administracija/Delete/5
+        // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Student student = db.studenti.Find(id);
             db.studenti.Remove(student);
