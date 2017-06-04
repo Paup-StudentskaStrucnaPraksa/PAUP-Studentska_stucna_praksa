@@ -18,9 +18,19 @@ namespace Praksa.Controllers
         private PraksaDbContext db = new PraksaDbContext();
 
         // GET: Poduzeca
-        
+
         public ActionResult Index()
         {
+            if (User.IsInRole("student"))
+            {
+                List<Poduzeca> lista = new List<Poduzeca>();
+                foreach (Poduzeca p in db.poduzeca.ToList()) {
+                    if (!p.aktivno)
+                        lista.Add(p);
+                }
+                return View(lista);
+            }
+
             return View(db.poduzeca.ToList());
         }
 
@@ -48,7 +58,7 @@ namespace Praksa.Controllers
         }
 
         // GET: Poduzeca/Create
-        public ActionResult Create()
+        public ActionResult Predlozi()
         {
             return View();
         }
@@ -58,7 +68,7 @@ namespace Praksa.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
+        public ActionResult Predlozi([Bind(Include = "nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
         {
             if (ModelState.IsValid)
             {
@@ -153,6 +163,25 @@ namespace Praksa.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [Authorize (Roles = "admin")]
+        public ActionResult AktivirajDeaktiviraj(string id) {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Poduzeca poduzeca = db.poduzeca.Find(id);
+            if (poduzeca == null)
+            {
+                return HttpNotFound();
+            }
+            if (poduzeca.aktivno)
+                poduzeca.aktivno = false;
+            else
+                poduzeca.aktivno = true;
+            db.Entry(poduzeca).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

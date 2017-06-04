@@ -93,7 +93,15 @@
                 @if (User.IsInRole("admin"))
                 {
                     @Html.ActionLink("Edit", "Edit", new { id = item.nazivPoduzeca })<text> | </text>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.nazivPoduzeca })
+                    if (item.aktivno)
+                    {
+                        @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.nazivPoduzeca })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.nazivPoduzeca })
+                    }
+
                 }
                 @if (User.IsInRole("student"))
                 {
@@ -102,10 +110,10 @@
             </td>
         </tr>
     }
-    
+
     </table>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Predloži", "Predlozi")
     </p>
     <p>
         <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })

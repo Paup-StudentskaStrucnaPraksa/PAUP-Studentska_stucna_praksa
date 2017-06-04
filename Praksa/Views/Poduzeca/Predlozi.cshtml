@@ -1,10 +1,7 @@
-﻿@using Praksa.Models
-@model Poduzeca
+﻿@model Praksa.Models.Poduzeca
 
 @{
     Layout = "~/Views/Shared/_mylajout.cshtml";
-
-
 }
 
 <!DOCTYPE html>
@@ -12,47 +9,94 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Predlozi</title>
+    <title>Predloži poduzeće</title>
 </head>
 <body>
-    <div>
-        <h1>Prijedlog novog poduzeća</h1>
-    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
         <div class="form-horizontal">
-        <table class="table">
-            <tr>
-                <td>@Html.Label("Naziv poduzeća")</td>
-                <td>@Html.TextBoxFor(model => model.nazivPoduzeca, new { @class = "form-control" })</td>
-            </tr>
-            <tr>
-                <td>@Html.Label("Adresa")</td>
-                <td>@Html.TextBoxFor(model => model.adresa, new { @class = "form-control" })</td>
-            <tr>
-                <td>@Html.Label("Mail")</td>
-                <td>@Html.TextBoxFor(model => model.mail, new { @class = "form-control" })</td>
-            </tr>
-            <tr>
-                <td>@Html.Label("URL")</td>
-                <td>@Html.TextBoxFor(model => model.url, new { @class = "form-control" })</td>
-            </tr>
-            <tr>
-                <td>@Html.Label("Faks")</td>
-                <td>@Html.TextBoxFor(model => model.faks, new { @class = "form-control" })</td>
-            </tr>
-            <tr>
-                <td>@Html.Label("Odgovorna Osoba")</td>
-                <td>@Html.TextBoxFor(model => model.odgovornaOsoba, new { @class = "form-control" })</td>
-            </tr>
-            <tr>
-                <td>@Html.Label("Kratki opis poduzeca")</td>
-                <td>@Html.TextBoxFor(model => model.kratkiOpisPoduzeca, new { @class = "form-control" })</td>
-            </tr>
-        </table>
-        <p><input type="submit" value="Predloži" class="btn btn-primary" /></p>
-    </div>
+            <h4>Predloži poduzeće</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.nazivPoduzeca, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nazivPoduzeca, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nazivPoduzeca, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.adresa, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.adresa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.adresa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.mail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.mail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.mail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.telefon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefon, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.faks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.faks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.faks, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.odgovornaOsoba, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.odgovornaOsoba, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.odgovornaOsoba, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.opisPoduzeca, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.opisPoduzeca, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.opisPoduzeca, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Predloži" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
     }
+    <div>
+        @Html.ActionLink("Natrag", "Index")
+    </div>
 </body>
 </html>

@@ -3,8 +3,8 @@
 @{
     Layout = "~/Views/Shared/_mylajout.cshtml";
 
- 
-   
+
+
 }
 <!DOCTYPE html>
 
@@ -43,7 +43,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.lozinka)
             </th>
-            <th></th>
+            @if (User.IsInRole("admin"))
+            {
+                <th></th>
+            }
+
         </tr>
     
     @foreach (var item in Model) {
@@ -75,10 +79,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.lozinka)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.maticniBroj }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.maticniBroj })
-            </td>
+            @if (User.IsInRole("admin"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.maticniBroj }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.maticniBroj })
+                </td>
+
+            }
+
         </tr>
     }
     
@@ -86,6 +95,8 @@
     <p>
         <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
     </p>
+
+
     @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>

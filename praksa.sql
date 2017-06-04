@@ -99,19 +99,20 @@ DROP TABLE IF EXISTS `poduzeca`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `poduzeca` (
-  `id_poduzeca` int(11) NOT NULL,
+  `id_poduzeca` int(11) NOT NULL AUTO_INCREMENT,
   `nazivPoduzeca` varchar(20) NOT NULL,
   `adresa` varchar(20) DEFAULT NULL,
   `mail` varchar(20) DEFAULT NULL,
-  `url` varchar(20) DEFAULT NULL,
+  `url` varchar(40) DEFAULT NULL,
   `telefon` varchar(20) DEFAULT NULL,
   `faks` varchar(20) DEFAULT NULL,
   `odgovornaOsoba` varchar(20) DEFAULT NULL,
   `opisPoduzeca` varchar(50) DEFAULT NULL,
-  `aktivno` tinyint(4) NOT NULL,
-  `brojStudenata` int(11) NOT NULL,
-  PRIMARY KEY (`id_poduzeca`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `aktivno` tinyint(4) NOT NULL DEFAULT '0',
+  `brojStudenata` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_poduzeca`),
+  UNIQUE KEY `id_poduzeca_UNIQUE` (`id_poduzeca`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-04 12:40:58
+-- Dump completed on 2017-06-04 16:20:40
