@@ -14,89 +14,93 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.prezime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.adresaStanovanja)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.telefon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.smjerStudija)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.godinaStudija)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.korisnickoIme)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.lozinka)
-            </th>
-            @if (User.IsInRole("admin"))
+    <center>
+        <h2>Studenti</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.prezime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.adresaStanovanja)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.smjerStudija)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.godinaStudija)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.korisnickoIme)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lozinka)
+                </th>
+                @if (User.IsInRole("admin"))
             {
-                <th></th>
+                    <th></th>
+                }
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.prezime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.adresaStanovanja)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.smjerStudija)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.godinaStudija)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.korisnickoIme)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lozinka)
+                    </td>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.maticniBroj }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.maticniBroj })
+                        </td>
+
+                    }
+
+                </tr>
             }
 
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.adresaStanovanja)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.telefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.smjerStudija)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.godinaStudija)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.korisnickoIme)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.lozinka)
-            </td>
-            @if (User.IsInRole("admin"))
-            {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.maticniBroj }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.maticniBroj })
-                </td>
+        </table>
+        <p>
+            <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
+        </p>
+    </center>
+        
 
-            }
-
-        </tr>
-    }
-    
-    </table>
-    <p>
-        <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
-    </p>
-
-
-    @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>

@@ -4,49 +4,52 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mylajout.cshtml";
 }
+<center>
+    <h2>Index</h2>
 
-<h2>Index</h2>
+   
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.mbr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nazivPoduzeca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.godina)
+            </th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.mbr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.prezime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nazivPoduzeca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.godina)
-        </th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mbr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nazivPoduzeca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.godina)
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.mbr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.prezime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nazivPoduzeca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.godina)
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+</center>

@@ -12,111 +12,115 @@
     <title>Index</title>
 </head>
 <body>
-   
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nazivPoduzeca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.adresa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.mail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.telefon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.faks)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.odgovornaOsoba)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.opisPoduzeca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.brojStudenata)
-            </th>
-            @if (User.IsInRole("admin"))
-            {
+    <center>
+        <h2>Poduzeca</h2>
+        <table class="table">
+            <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.aktivno)
+                    @Html.DisplayNameFor(model => model.nazivPoduzeca)
                 </th>
-            }
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nazivPoduzeca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.adresa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.url)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.telefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.faks)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.odgovornaOsoba)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.opisPoduzeca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.brojStudenata)
-            </td>
-            
-            @if (User.IsInRole("admin"))
-            {
-                <td>
-                    @Html.DisplayFor(model => item.aktivno)
-                </td>
-            }
-
-            <td>
+                <th>
+                    @Html.DisplayNameFor(model => model.adresa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.url)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.faks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.odgovornaOsoba)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.opisPoduzeca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.brojStudenata)
+                </th>
                 @if (User.IsInRole("admin"))
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
-                    if (item.aktivno)
+            {
+                    <th>
+                        @Html.DisplayNameFor(model => model.aktivno)
+                    </th>
+                }
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nazivPoduzeca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.adresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.url)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.faks)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.odgovornaOsoba)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.opisPoduzeca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.brojStudenata)
+                    </td>
+
+                    @if (User.IsInRole("admin"))
                     {
-                        @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
+                        <td>
+                            @Html.DisplayFor(model => item.aktivno)
+                        </td>
                     }
 
-                }
-                @if (User.IsInRole("student"))
+                    <td>
+                        @if (User.IsInRole("admin"))
                 {
-                    @Html.ActionLink("Prijavi", "Prijavi", new { id = item.id_poduzeca })
-                }
-            </td>
-        </tr>
-    }
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
+                            if (item.aktivno)
+                            {
+                                @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
+                            }
 
-    </table>
-    <p>
-        @Html.ActionLink("Predloži", "Predlozi")
-    </p>
-    <p>
-        <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
-    </p>
+                        }
+                        @if (User.IsInRole("student"))
+                {
+                            @Html.ActionLink("Prijavi", "Prijavi", new { id = item.id_poduzeca })
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <p>
+            @Html.ActionLink("Predloži", "Predlozi")
+        </p>
+        <p>
+            <span class="glyphicon glyphicon-print"></span> @Html.ActionLink("Ispiši listu", "Ispisi", "", new { target = "blank" })
+        </p>
+    </center>
 </body>
+
 </html>
