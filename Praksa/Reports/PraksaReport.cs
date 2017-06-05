@@ -51,7 +51,7 @@ namespace Praksa.Reports
             pdfDokument.Add(p);
 
             // naslov
-            p = new Paragraph("POPIS STUDENATA", naslov);
+            p = new Paragraph("Popis administracije", naslov);
             p.Alignment = Element.ALIGN_CENTER;
             p.SpacingBefore = 30;
             p.SpacingAfter = 30;
