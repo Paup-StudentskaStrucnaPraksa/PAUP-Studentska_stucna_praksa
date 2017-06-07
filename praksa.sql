@@ -16,6 +16,168 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `__migrationhistory`
+--
+
+DROP TABLE IF EXISTS `__migrationhistory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `__migrationhistory` (
+  `MigrationId` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `ContextKey` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `Model` longblob NOT NULL,
+  `ProductVersion` varchar(32) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`MigrationId`,`ContextKey`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `__migrationhistory`
+--
+
+LOCK TABLES `__migrationhistory` WRITE;
+/*!40000 ALTER TABLE `__migrationhistory` DISABLE KEYS */;
+INSERT INTO `__migrationhistory` VALUES ('201706072023573_InitialCreate','Praksa.Models.ApplicationDbContext','‹\0\0\0\0\0\0\İ\\[o\ãº~/\Ğÿ \è±È±r\én·}rœ¤\rº¹`=\èÛ‚–hGX‰Ô‘¨œEYú“ú:”¨/ºØŠ\í,°°\È\á7\Ã\á‡ù\ßş;ı\é%¬g\'>%3ûdrl[˜¸\Ôó\Ézf§lõ\Ã\'û§ÿø‡\é•¾X¿tgœZ’df?1;N\â>\á%“\Ğwcš\Ğ›¸4tG\Ó\ã\ã¿:\'\'°,kú%%\ÌqöŸsJ\\±·\Ô\ÃA\"Ê¡f‘¡Zw(\ÄI„\\<³bô=A“œĞ¶.¬lBb \âù\×/XL\ÉzA\n_#t+$Xˆ~^‘÷\í\Åñ)\ï…S5, \Ü4a4xr&\Ô\â\È\Í7R®]ª\rw\nf¯¼×™òfö‡³¢/4\0\È\Ï\çAÌ‰göm\É\â\"‰\î0›\r\'9\äup¿\Ñøû¤xdõnwTš\Ñ\é\ä˜ÿ;²\æiÀ\Ò\ÏNYŒ‚#\ë!]¾ûüúH¿c2;;Y®\Î>}øˆ¼³\Æg\ê=…¾]£\0Šb\Z\ádÃ«²ÿ¶\å4\Û9rÃ²Y­M®°%˜¶u‹^>c²fO0WN?\ÙÖµÿ‚½¢D\×W\â\Ã‚F,N\áó.\r´pY\ï´ò\äÿ·p=ığq®w\è\Ù_gC/ñ‡‰Ã¼ú‚ƒ¬6yò£|z5\Æû› »iÈ¿›ö•\×~[\Ğ4vyg¨‘\ä\ÅkÌš\ÒM\Êx{™4‡\Zß¬\Ô\Ã7m.©j\ŞZRŞ¡MfBÁb×³¡÷mùö¶¸‹(‚Á\ËL‹k¤\Í\à\Zû\ÔDjfUWs\Ò\×`t\ä÷¼ş]…\ÈFX\0{p·c\å\Ç!.{ù3sCd°\Ì(I`ş{G\ÉS‹\èğs\Ñ\ØMc0\ËCaô\æ\Ü(Áwi¸\äÖ¾;^£\r\Í\ãoô\Z¹Œ\ÆW„·\Ú\Z\ï3u¿Ó”]\ï1ü•¹ ÿ|ô\Ãş\0£ˆs\áº8I®Á˜±7§\àU€7„†\ãkÓ¾y€üP\ïH«è·‚´òBôŠ\'b \Óy#m¢~¦kŸôµ 5‹šStŠ*È†Š\ÊÁúI*(Í‚fr\æT£ùw\Ù\ï\àe°‡\ï\ám·y›Ö‚š\Z°B\â¿a‚cXÆ¼\ÄI5}Ö}8\Ùğq¦o¾7eœ~AA:6«fC¶Œ?2\ØÃŸ\r™˜Pü\ì{\Ü+\éq\ì)ˆ¾½şD\Õ=\ç$\Év=\Z\İ\Ü5óİ¬¦\ér‘$\Ôõ³Y 	x‰pES~ğ\á¬\î\ØE\Ş9şC÷ù–%\Ğ7[6ª{r‰Ì°u\á\æÁ9J\\\ä©j„y+vT`U¤)ÜŸ`\é8\æ?%0S}\Â\Ôi\á×PĞ©%©e\Ï-Œ÷½\ä!\×\\\âÎ°S}˜\ë\Ã\\€’4(]\Zš:5‹k7Dƒ\×j\Zó.¶\Zw%\Z±›\ìğ\rv)ü·71\Ìv\íÀ8\ÛU\ÒG\0co*\Î*}\r@>¸šJ\'&ƒ\n—j\'\Ú\Ô\Ø´©’wg ùµ\ïøK\ç\ÕC3\Ï\æAy÷\Ûz«ºö`›\r}˜i\æ¾\'´a\ĞÇªy^.y%~aš\Ã\È)\Îg‰pue\á\àÌš!›\Ê\ß\Õú¡N;ˆlDm€•¡u€Š\Ë?H™P„+by­\Ò	/b\0lwk…k¿[³»~	Z#4_•\Ê\Æ\Ù\ëôQö¬´\Å\È{j8\Zƒ¯f\Ç{(\Å—U\Ó\Ç\â\r\×:&£EA«AIEgF\×Raš\İZ\Ò9dC\\²­´$¹O-]K\ÂF»•¤q\n¸[©¨¹…4ÙŠHG¹Û”uS\'O‹SÇ?5½EQ\ä“u-ŸJ”X‹<™jş\ÃbxªQ˜c8n¢\É8*¥-91\Z£5–j5Hz\í\Ç	»D-óÌ½P!\Óî­†\å¿`Y\ß>\ÕA,ö‚šÿ.\Âgõ+û\Æ6«ú!¢ù5t.\ä\ÎLA\×½¾¹\ÅS\ÛP€bM\Ğ~Nƒ4$f\ß\Ê\Ü:¿º«·\ÏKT„©#É¯øNŠ¢·©õ^c¢Î‡\íÇ§ôZ6#3„IÓ…\ÏY×µ\É5£a©:Š)Tµ·13¹/}\ÇIv\n‡S\'\Â\Û\Ì&‘‰RE1j\É\nX­®?j3ß¤Ù¬\é(%•\Ô!¥ªR\ÖSG\ZB\Ö+6\Â3hTOÑŸƒš,RGWkû#k\ÒF\êĞš\ê\r°52\ËuıQ5™%u`Mu\ì*\ÍD^?x¿2U6Ù°òƒ\ìv;–\ãm\Ãq6¼\Ú}}¨V<K\Ü\È+`¢ü \r\Éxš\ÛÄò\Ğ\Åv†dÀ0¯7K\î\ær\Óz3o\Æl\Ü\\7–ô¶›{3\Ş0s}S£P\Îq2IÉ½<\ÏIç¶©8Cu?QU9‰mjœÙ·¯‹_ƒ	¯Ÿd?çù\ê]P\Ü\"\â¯p\Âòt\rû\Ã\ä/\Ò#›\Ãyğ\â$‰hÎ ¦W/\Í1\ÛA\âyF±û„b5\rb‹G!¨a¾!~™\Ùÿ\ÊZgÁ\nş++>²n’¯\Äÿ5…Š\Ç8\ÅÖ¿Õ´\Îq’\ä\ÛOUú¤¡¿Voşù-ozd\İ\Ç0aÎ­cI—›Œpó¡\Ã iò¦[H³ñó‡÷;¡\Z¯´¨Ò„\ØüQÁ’\Ò`”É²«¥abil\n¦y0\Ô8J3\åúofLô÷\à“e‰ş1vıüA\ìñ\Ğ\Î\ëŸl$©ñ\r€O\Ø\Ö/\0ú¯DE\Ë=\î6š\Ñ.V¥LÏ\Ô[¥S\î{{R­7ôju?¤-Ò¤7°‡w–a<Ú¶¨I \r{Ÿı\æYÃ‡’(\\¥p\ì7?x—)Á-@¿«L\à\È]\Ó\ä\â\ì?\ßw×¶fŠ\İx\Òä°¬\Ş36‘¡µÿ\Ü\İ]›)¾{\à\Æ6(C÷Àlm_û\ç-­÷º÷|[5u\Èp£w\å\Ó\æs8\æ/)A\îQ\æ\Ï õ	\\mÉ§+3Ss\æ˜\ÌX™8\n_…¢í°¾Š\r¿µ³‚¦­!ß²·Xÿ[yšvŞ†,\Æ}dkóu\Ù\Ù\ëX[º\Ó{\Êümô¤#Ñ¼\Ëgm½PO‰¾£(¥1{—\Ã\ï\'¯w•Œ9u\äñª÷¼°w\ÖşT\"\ìß‰¿® øN$\Øm\ìš%\Í\rY\Ñbó–$*H¤\Í-fÈƒ-õ\"fş\n¹ªyd9{Ç…\ìø\Ç{7\ä>eQÊ \Ë8\\€w\Úøg\É\ÊM™§÷Qö\'I\Æ\èˆ\éó\0ı=ù9õ¯”ûZ2@p\ïB\ÄqùX2\Ï]¿–Hw”ô\ê+¢GF€%÷dñ&²ù}\Æk\ä¾V@H÷@4\Õ>½ô\Ñ:Fa\"0ªöğ	6\ì…/?şm`1T\0\0','6.1.3-40302');
+/*!40000 ALTER TABLE `__migrationhistory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetroles`
+--
+
+DROP TABLE IF EXISTS `aspnetroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aspnetroles` (
+  `Id` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `Name` varchar(256) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetroles`
+--
+
+LOCK TABLES `aspnetroles` WRITE;
+/*!40000 ALTER TABLE `aspnetroles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetroles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserclaims`
+--
+
+DROP TABLE IF EXISTS `aspnetuserclaims`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aspnetuserclaims` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `UserId` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `ClaimType` longtext,
+  `ClaimValue` longtext,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`),
+  KEY `UserId` (`UserId`),
+  CONSTRAINT `ApplicationUser_Claims` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserclaims`
+--
+
+LOCK TABLES `aspnetuserclaims` WRITE;
+/*!40000 ALTER TABLE `aspnetuserclaims` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetuserclaims` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserlogins`
+--
+
+DROP TABLE IF EXISTS `aspnetuserlogins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aspnetuserlogins` (
+  `LoginProvider` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `ProviderKey` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `UserId` varchar(128) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`LoginProvider`,`ProviderKey`,`UserId`),
+  KEY `ApplicationUser_Logins` (`UserId`),
+  CONSTRAINT `ApplicationUser_Logins` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserlogins`
+--
+
+LOCK TABLES `aspnetuserlogins` WRITE;
+/*!40000 ALTER TABLE `aspnetuserlogins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetuserlogins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetuserroles`
+--
+
+DROP TABLE IF EXISTS `aspnetuserroles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aspnetuserroles` (
+  `UserId` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `RoleId` varchar(128) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`UserId`,`RoleId`),
+  KEY `IdentityRole_Users` (`RoleId`),
+  CONSTRAINT `ApplicationUser_Roles` FOREIGN KEY (`UserId`) REFERENCES `aspnetusers` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `IdentityRole_Users` FOREIGN KEY (`RoleId`) REFERENCES `aspnetroles` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetuserroles`
+--
+
+LOCK TABLES `aspnetuserroles` WRITE;
+/*!40000 ALTER TABLE `aspnetuserroles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetuserroles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aspnetusers`
+--
+
+DROP TABLE IF EXISTS `aspnetusers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aspnetusers` (
+  `Id` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `Email` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `EmailConfirmed` tinyint(1) NOT NULL,
+  `PasswordHash` longtext,
+  `SecurityStamp` longtext,
+  `PhoneNumber` longtext,
+  `PhoneNumberConfirmed` tinyint(1) NOT NULL,
+  `TwoFactorEnabled` tinyint(1) NOT NULL,
+  `LockoutEndDateUtc` datetime DEFAULT NULL,
+  `LockoutEnabled` tinyint(1) NOT NULL,
+  `AccessFailedCount` int(11) NOT NULL,
+  `UserName` varchar(256) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aspnetusers`
+--
+
+LOCK TABLES `aspnetusers` WRITE;
+/*!40000 ALTER TABLE `aspnetusers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspnetusers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `poduzeca`
 --
 
@@ -73,7 +235,6 @@ CREATE TABLE `praksa` (
 
 LOCK TABLES `praksa` WRITE;
 /*!40000 ALTER TABLE `praksa` DISABLE KEYS */;
-INSERT INTO `praksa` VALUES (1,'1234567890123',1,0,0,0000),(2,'1234567890123',1,0,0,2017),(3,'1234567890123',2,0,0,2017),(4,'1232343454567',2,0,0,2017);
 /*!40000 ALTER TABLE `praksa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,4 +281,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-04 20:21:16
+-- Dump completed on 2017-06-07 22:30:21

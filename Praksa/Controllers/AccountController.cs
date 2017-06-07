@@ -166,13 +166,13 @@ namespace Praksa.Controllers
                         var store = new UserStore<ApplicationUser>(context);
                         var manager = new UserManager<ApplicationUser>(store);
                         string userid = context.Users.FirstOrDefault(s => s.UserName == student.mail).Id;
-                        var rezultat = manager.AddToRole(userid, "student");
-                        if (result.Succeeded)
-                        {
+                        //var rezultat = manager.AddToRole(userid, "student");
+                        //if (result.Succeeded)
+                        //{
                             db.SaveChanges();
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                             return RedirectToAction("Index", "Home");
-                        }
+                       // }
                     }
 
                     

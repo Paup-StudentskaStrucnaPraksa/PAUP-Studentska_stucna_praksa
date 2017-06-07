@@ -20,8 +20,13 @@ namespace Praksa.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        static ApplicationDbContext()
+        {
+            Database.SetInitializer(new Praksa.App_Start.MySqlInitializer());
+        }
+
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+          : base("DefaultConnection")
         {
         }
 
