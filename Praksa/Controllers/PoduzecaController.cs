@@ -51,15 +51,17 @@ namespace Praksa.Controllers
         }
 
         [Authorize(Roles = "student")]
-        public ActionResult PrijaviP(int? id, string mail)
+        public ActionResult PrijaviP(int? id)
         {
-            Student student = db.studenti.Single(s => s.mail == mail);
+            Student student = db.studenti.Single(s => s.mail == User.Identity.Name);
             Poduzeca poduzeca = db.poduzeca.Find(id);
             Prakse prakse = new Prakse()
             {
                 MBRStudenta = student.maticniBroj,
                 id_poduzeca = poduzeca.id_poduzeca,
-                godina = DateTime.Now.Year
+                godina = DateTime.Now.Year,
+                datumPocetka = DateTime.Now.Date,
+                datumKraja = DateTime.Now.Date
             };
 
             db.prakse.Add(prakse);

@@ -18,5 +18,11 @@ namespace Praksa.Models
         public bool zavrseno { get; set; }
         public bool zakljucano { get; set; }
         public int godina { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime datumPocetka { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime datumKraja { get; set; }
     }
 }

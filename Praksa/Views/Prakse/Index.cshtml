@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_mylajout.cshtml";
 }
 <center>
-    <h2>Index</h2>
+    <h2>Popis prijavljenih praksa</h2>
 
    
     <table class="table">
@@ -25,6 +25,19 @@
             <th>
                 @Html.DisplayNameFor(model => model.godina)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pocetak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kraj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zavrseno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zakljucano)
+            </th>
+            <th></th>
         </tr>
 
         @foreach (var item in Model)
@@ -45,11 +58,33 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.godina)
                 </td>
+                <td>
+                    @item.pocetak.ToString("dd-MM-yyyy")
+                </td>
+                <td>
+                    @item.kraj.ToString("dd-MM-yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zavrseno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zakljucano)
+                </td>
+                @if (item.zakljucano)
+                {
+                    <td>
+                        @Html.ActionLink("Odključaj", "Zakljucaj", new { id = item.id })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Zaključaj", "Zakljucaj", new { id = item.id })
+                    </td>
+                }
+                
             </tr>
         }
 
     </table>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
 </center>

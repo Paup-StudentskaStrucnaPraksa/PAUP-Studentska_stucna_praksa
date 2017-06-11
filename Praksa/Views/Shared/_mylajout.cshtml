@@ -30,7 +30,14 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li>@Html.ActionLink("Poduzeća", "Index", "Poduzeca", new { area = "" }, new { @class = "navbar-brand" })</li>
-                            <li>@Html.ActionLink("Praksa", "Index", "Prakse", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            if (User.IsInRole("student"))
+                            {
+                                <li>@Html.ActionLink("Praksa", "Edit", "Prakse", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Praksa", "Index", "Prakse", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            }
                         }
 
                        

@@ -317,10 +317,11 @@
     <Content Include="Views\Shared\_MyLayoutView.cshtml" />
     <Content Include="Views\Prakse\Index.cshtml" />
     <Content Include="Views\Poduzeca\Prijavi.cshtml" />
+    <Content Include="Views\Prakse\Edit.cshtml" />
+    <Content Include="Views\Prakse\NemaPrakse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Students\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

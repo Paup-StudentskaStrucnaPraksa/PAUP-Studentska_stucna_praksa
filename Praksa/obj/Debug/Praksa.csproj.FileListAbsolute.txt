@@ -336,7 +336,6 @@ D:\simon\PAUP_faks\PAUP-Studentska_stucna_praksa\Praksa\bin\Microsoft.Owin.Secur
 D:\simon\PAUP_faks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
 D:\simon\PAUP_faks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.dll
 D:\simon\PAUP_faks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.pdb
-C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\ApplicationInsights.config
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\roslyn\csc.exe
 C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
