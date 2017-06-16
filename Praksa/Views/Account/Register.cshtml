@@ -1,5 +1,5 @@
 ﻿@model Praksa.Models.Student
-
+@using Praksa.Models
 @{
     Layout = "~/Views/Shared/_mylajout.cshtml";
 
@@ -72,7 +72,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.smjerStudija, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.smjerStudija, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.smjerStudija, new SelectList(Enum.GetValues(typeof(SmjerStudija))),"Odaberi smjer")
                     @Html.ValidationMessageFor(model => model.smjerStudija, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -80,16 +80,9 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.godinaStudija, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.godinaStudija, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.godinaStudija, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.korisnickoIme, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.korisnickoIme, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.korisnickoIme, "", new { @class = "text-danger" })
+                        @Html.RadioButtonFor(model => model.godinaStudija, 1) 1
+                        @Html.RadioButtonFor(model => model.godinaStudija, 2) 2
+                        @Html.RadioButtonFor(model => model.godinaStudija, 3) 3
                 </div>
             </div>
 
@@ -109,8 +102,5 @@
         </div>
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 </body>
 </html>

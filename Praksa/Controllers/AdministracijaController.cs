@@ -44,7 +44,7 @@ namespace Praksa.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "maticniBroj,ime,prezime,adresaStanovanja,mail,telefon,smjerStudija,godinaStudija,korisnickoIme,lozinka")] Student student)
+        public ActionResult Edit([Bind(Include = "maticniBroj,ime,prezime,adresaStanovanja,mail,telefon,smjerStudija,godinaStudija,lozinka")] Student student)
         {
             if (ModelState.IsValid)
             {

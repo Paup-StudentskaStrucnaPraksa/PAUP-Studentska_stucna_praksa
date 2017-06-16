@@ -44,12 +44,17 @@
                     @Html.DisplayNameFor(model => model.brojStudenata)
                 </th>
                 @if (User.IsInRole("admin"))
-            {
+                {
                     <th>
                         @Html.DisplayNameFor(model => model.aktivno)
                     </th>
+                    <th></th>
                 }
-                <th></th>
+                @if (User.IsInRole("student") && !ViewBag.prijavljen)
+                {
+                    <th></th>
+                }
+
             </tr>
 
             @foreach (var item in Model)
@@ -90,9 +95,9 @@
                         </td>
                     }
 
-                    <td>
                         @if (User.IsInRole("admin"))
-                {
+                            { 
+                            <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
                             if (item.aktivno)
                             {
@@ -102,13 +107,15 @@
                             {
                                 @Html.ActionLink("Aktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
                             }
-
+                            </td>
                         }
-                        @if (User.IsInRole("student"))
-                {
+                        @if (User.IsInRole("student") && !ViewBag.prijavljen)
+                        {
+                            <td>
                             @Html.ActionLink("Prijavi", "Prijavi", new { id = item.id_poduzeca })
+                            </td>
                         }
-                    </td>
+                    
                 </tr>
             }
 

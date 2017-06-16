@@ -94,6 +94,9 @@ namespace Praksa.Controllers
         [HttpPost]
         public ActionResult Edit([Bind(Include = "id,pocetak,kraj")] PraksePomocna praksa)
         {
+            if (praksa.pocetak > praksa.kraj)
+                return Content("Početak prakse je veći od kraja");
+
             Prakse p = db.prakse.Find(praksa.id);
             p.datumPocetka = praksa.pocetak;
             p.datumKraja = praksa.kraj;
@@ -109,7 +112,13 @@ namespace Praksa.Controllers
         [Authorize(Roles = "student")]
         public ActionResult Odjavi(int? id)
         {
+            Student s = db.studenti.Single(x => x.mail == User.Identity.Name);
             Prakse p = db.prakse.Find(id);
+            Poduzeca pod = db.poduzeca.Find(p.id_poduzeca);
+            pod.brojStudenata--;
+            s.prijavljen = false;
+            db.Entry(s).State = EntityState.Modified;
+            db.Entry(pod).State = EntityState.Modified;
             db.prakse.Remove(p);
             db.SaveChanges();
 

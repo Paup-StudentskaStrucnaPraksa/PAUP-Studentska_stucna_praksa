@@ -40,9 +40,6 @@
                     @Html.DisplayNameFor(model => model.godinaStudija)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.korisnickoIme)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.lozinka)
                 </th>
                 @if (User.IsInRole("admin"))
@@ -77,16 +74,13 @@
                         @Html.DisplayFor(modelItem => item.godinaStudija)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.korisnickoIme)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.lozinka)
                     </td>
                     @if (User.IsInRole("admin"))
                     {
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.maticniBroj }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.maticniBroj })
+                            @Html.ActionLink("Uredi", "Edit", new { id = item.maticniBroj }) |
+                            @Html.ActionLink("Obriši", "Delete", new { id = item.maticniBroj })
                         </td>
 
                     }

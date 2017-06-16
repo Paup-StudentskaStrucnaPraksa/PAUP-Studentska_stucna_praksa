@@ -82,7 +82,7 @@ namespace Praksa.Reports
                 t.AddCell(VratiCeliju(s.mail, tekst, BaseColor.WHITE, false));
                 t.AddCell(VratiCeliju(s.telefon,
                     tekst, BaseColor.WHITE, false));
-                t.AddCell(VratiCeliju(s.smjerStudija, tekst, BaseColor.WHITE, false));
+                t.AddCell(VratiCeliju(s.smjerStudija.ToString(), tekst, BaseColor.WHITE, false));
                 t.AddCell(VratiCeliju(s.godinaStudija.ToString(), tekst, BaseColor.WHITE, false));
             }
 

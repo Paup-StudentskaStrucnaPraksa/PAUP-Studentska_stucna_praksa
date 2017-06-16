@@ -21,6 +21,8 @@ namespace Praksa.Controllers
 
         public ActionResult Index()
         {
+            Student student = db.studenti.Single(s => s.mail == User.Identity.Name);
+            ViewBag.prijavljen = student.prijavljen;
             if (User.IsInRole("student"))
             {
                 List<Poduzeca> lista = new List<Poduzeca>();
@@ -54,6 +56,11 @@ namespace Praksa.Controllers
         public ActionResult PrijaviP(int? id)
         {
             Student student = db.studenti.Single(s => s.mail == User.Identity.Name);
+            if (student.prijavljen)
+            {
+                return Content("Već imate prijavljenu praksu");
+            }
+            student.prijavljen = true;
             Poduzeca poduzeca = db.poduzeca.Find(id);
             Prakse prakse = new Prakse()
             {
@@ -63,9 +70,12 @@ namespace Praksa.Controllers
                 datumPocetka = DateTime.Now.Date,
                 datumKraja = DateTime.Now.Date
             };
-
+            poduzeca.brojStudenata++;
+            db.Entry(poduzeca).State = EntityState.Modified;
+            db.Entry(student).State = EntityState.Modified;
             db.prakse.Add(prakse);
             db.SaveChanges();
+            
 
             return RedirectToAction("Index");
         }
@@ -76,9 +86,7 @@ namespace Praksa.Controllers
             return View();
         }
 
-        // POST: Poduzeca/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Predlozi([Bind(Include = "nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
@@ -92,6 +100,7 @@ namespace Praksa.Controllers
 
             return View(poduzeca);
         }
+
         [Authorize(Roles = ("admin"))]
         // GET: Poduzeca/Edit/5
         public ActionResult Edit(int? id)
@@ -108,9 +117,7 @@ namespace Praksa.Controllers
             return View(poduzeca);
         }
 
-        // POST: Poduzeca/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [Authorize(Roles = ("admin"))]
         [ValidateAntiForgeryToken]

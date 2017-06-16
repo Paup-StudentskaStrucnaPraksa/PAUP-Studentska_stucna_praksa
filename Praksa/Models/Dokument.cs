@@ -11,8 +11,11 @@ namespace Praksa.Models
     public class Dokument
     {
         [Key]
+        [Display(Name = "ID")]
         public int iddokumenti { get; set; }
+        [Display(Name = "Dokument")]
         public string dokument { get; set; }
+        [Display(Name = "ID prakse")]
         public int idprakse { get; set; }
         public string put { get; set; }
     }

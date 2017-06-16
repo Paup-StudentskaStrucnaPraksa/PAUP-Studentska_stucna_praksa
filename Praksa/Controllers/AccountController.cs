@@ -151,11 +151,19 @@ namespace Praksa.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register([Bind(Include = "maticniBroj,ime,prezime,adresaStanovanja,mail,telefon,smjerStudija,godinaStudija,korisnickoIme,lozinka")]Student student)
+        public async Task<ActionResult> Register([Bind(Include = "maticniBroj,ime,prezime,adresaStanovanja,mail,telefon,smjerStudija,godinaStudija,lozinka")]Student student)
         {
             if (ModelState.IsValid)
             {
                 db.studenti.Add(student);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    return Content("Unesite ispravne podatke!");
+                }
                 var user = new ApplicationUser { UserName = student.mail, Email = student.mail };
                 var result = await UserManager.CreateAsync(user, student.lozinka);
                 if (result.Succeeded)
@@ -166,13 +174,14 @@ namespace Praksa.Controllers
                         var store = new UserStore<ApplicationUser>(context);
                         var manager = new UserManager<ApplicationUser>(store);
                         string userid = context.Users.FirstOrDefault(s => s.UserName == student.mail).Id;
-                        //var rezultat = manager.AddToRole(userid, "student");
-                        //if (result.Succeeded)
-                        //{
-                            db.SaveChanges();
+                        var rezultat = manager.AddToRole(userid, "student");
+                        if (result.Succeeded)
+                        {
+
+                            
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                             return RedirectToAction("Index", "Home");
-                       // }
+                       }
                     }
 
                     

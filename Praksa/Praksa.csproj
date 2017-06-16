@@ -309,7 +309,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Poduzeca\Index.cshtml" />
     <Content Include="Views\Poduzeca\Predlozi.cshtml" />
-    <Content Include="Views\Poduzeca\Create.cshtml" />
     <Content Include="Views\Poduzeca\Delete.cshtml" />
     <Content Include="Views\Poduzeca\Edit.cshtml" />
     <Content Include="Views\Administracija\Delete.cshtml" />

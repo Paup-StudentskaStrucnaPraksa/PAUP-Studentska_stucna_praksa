@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Praksa.Models;
+using System.Data.Entity;
 
 namespace Praksa.Controllers
 {
@@ -15,6 +16,7 @@ namespace Praksa.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private PraksaDbContext db = new PraksaDbContext();
 
         public ManageController()
         {
@@ -238,6 +240,10 @@ namespace Praksa.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
+                Student s = db.studenti.Single(x => x.mail==User.Identity.Name);
+                s.lozinka = model.NewPassword;
+                db.Entry(s).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
