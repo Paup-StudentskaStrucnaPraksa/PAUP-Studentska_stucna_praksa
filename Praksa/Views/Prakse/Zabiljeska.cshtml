@@ -1,0 +1,45 @@
+﻿@model Praksa.Models.Dnevnik
+@{
+    ViewBag.Title = "Zabiljeska";
+    Layout = "~/Views/Shared/_mylajout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bilješke</title>
+</head>
+<body>
+    <center>
+        <h2>Dodaj bilješku</h2>
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.iddnevnik)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.zabiljeska, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="editor-multiline-field">
+                        @Html.TextAreaFor(model => model.zabiljeska, new { cols = 100, @rows = 25 })
+                        @Html.ValidationMessageFor(model => model.zabiljeska, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </center>
+</body>
+</html>
+

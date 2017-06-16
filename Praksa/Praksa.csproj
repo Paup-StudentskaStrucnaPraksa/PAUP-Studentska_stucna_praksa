@@ -220,6 +220,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Dnevnik.cs" />
+    <Compile Include="Models\Dokument.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Poduzeca.cs" />
@@ -319,6 +321,9 @@
     <Content Include="Views\Poduzeca\Prijavi.cshtml" />
     <Content Include="Views\Prakse\Edit.cshtml" />
     <Content Include="Views\Prakse\NemaPrakse.cshtml" />
+    <Content Include="Views\Prakse\Zabiljeska.cshtml" />
+    <Content Include="Views\Prakse\Biljeske.cshtml" />
+    <Content Include="Views\Prakse\Dokumenti.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

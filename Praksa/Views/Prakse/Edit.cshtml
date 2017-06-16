@@ -12,12 +12,12 @@
     <title>Detalji</title>
 </head>
 <body>
-    <div>
+    <div class="center">
         <h4>Detalji prijavljene prakse</h4>
         <hr />
-        <dl class="dl-horizontal">
+        <dl>
             <dt>
-                @Html.DisplayNameFor(model => model.ime):
+                <b>@Html.DisplayNameFor(model => model.ime):</b>
             </dt>
 
             <dd>
@@ -64,7 +64,13 @@
                 @Html.DisplayFor(model => model.kraj)
             </dd>
         </dl>
+        <div>
+            @Html.ActionLink("Dodaj bilješku", "Zabiljeska", new { idpr = Model.id})
+            @Html.ActionLink("Dodaj dokument", "Dokumenti", new { id = Model.id })
+        </div>
     </div>
+
+
     @if (!Model.zakljucano)
     {
         <div class="center">

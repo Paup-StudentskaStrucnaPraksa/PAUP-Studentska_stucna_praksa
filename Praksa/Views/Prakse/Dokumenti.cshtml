@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Praksa.Models.Dokument>
+@using Praksa.Models
+@{ 
+    ViewBag.Title = "Dokumenti";
+    Layout = "~/Views/Shared/_mylajout.cshtml";
+}
+
+
+
+<html>
+<body>
+    <h2>Dokumenti</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.iddokumenti)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dokument)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                @Html.HiddenFor(model => item.idprakse)
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.iddokumenti)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dokument)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Preuzmi", "Preuzmi", new { put = item.put, file=item.dokument})
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="@ViewBag.id" name="id"/>
+        <label for="file">Dodaj datoteku:</label>
+        <input type="file" name="file" id="file" />
+        <input type="submit" />
+    </form>
+    
+
+</body>
+</html>

@@ -70,19 +70,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.zakljucano)
                 </td>
-                @if (item.zakljucano)
-                {
-                    <td>
-                        @Html.ActionLink("Odključaj", "Zakljucaj", new { id = item.id })
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        @Html.ActionLink("Zaključaj", "Zakljucaj", new { id = item.id })
-                    </td>
-                }
-                
+                <td>
+                    @if (item.zakljucano)
+                    {
+                        @Html.ActionLink("Odključaj", "Zakljucaj", new { id = item.id }) <text> | </text>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Zaključaj", "Zakljucaj", new { id = item.id }) <text> | </text>
+                    }
+                    @Html.ActionLink("Bilješke", "Biljeske", new { id = item.id }) | 
+                    @Html.ActionLink("Dokumenti", "Dokumenti", new { id = item.id })
+                </td>
             </tr>
         }
 
