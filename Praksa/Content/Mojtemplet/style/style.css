@@ -16,7 +16,7 @@ p
 
 img
 { border: 0;
-  height:90px;
+  
 }
 
 h1, h2, h3, h4, h5, h6 
@@ -138,7 +138,7 @@ ol li
   color: #999;}
 
 #menubar
-{ width: 1500px;
+{ width: 720px;
   height: 46px;} 
 
 ul#menu
