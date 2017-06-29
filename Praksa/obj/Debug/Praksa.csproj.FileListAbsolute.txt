@@ -507,3 +507,4 @@ D:\simon\paupfaks\PAUP-Studentska_stucna_praksa\Praksa\bin\Microsoft.Owin.Securi
 D:\simon\paupfaks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache
 D:\simon\paupfaks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.dll
 D:\simon\paupfaks\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.pdb
+C:\Users\Puter\Documents\GitHub\PAUP-Studentska_stucna_praksa\Praksa\obj\Debug\Praksa.csprojResolveAssemblyReference.cache

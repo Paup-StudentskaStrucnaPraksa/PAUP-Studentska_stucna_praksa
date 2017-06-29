@@ -99,7 +99,7 @@
                             { 
                             <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
-                            if (item.aktivno)
+                            @if (item.aktivno)
                             {
                                 @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
                             }

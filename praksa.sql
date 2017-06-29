@@ -193,7 +193,7 @@ CREATE TABLE `dnevnik` (
   `zabiljeska` text,
   `datum` date NOT NULL,
   PRIMARY KEY (`iddnevnik`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +202,6 @@ CREATE TABLE `dnevnik` (
 
 LOCK TABLES `dnevnik` WRITE;
 /*!40000 ALTER TABLE `dnevnik` DISABLE KEYS */;
-INSERT INTO `dnevnik` VALUES (15,5,'asdfasdfasdfasdf','2017-06-12'),(16,5,'','2017-06-15'),(17,6,'','2017-06-16');
 /*!40000 ALTER TABLE `dnevnik` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +218,7 @@ CREATE TABLE `dokumenti` (
   `idprakse` int(11) NOT NULL,
   `put` text NOT NULL,
   PRIMARY KEY (`iddokumenti`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +227,6 @@ CREATE TABLE `dokumenti` (
 
 LOCK TABLES `dokumenti` WRITE;
 /*!40000 ALTER TABLE `dokumenti` DISABLE KEYS */;
-INSERT INTO `dokumenti` VALUES (14,'Acc-za-testiranje.txt',9,'C:\\Users\\Puter\\Documents\\GitHub\\PAUP-Studentska_stucna_praksa\\Praksa\\\\Dokumenti\\godina_2016_2017\\Dok_1.txt');
 /*!40000 ALTER TABLE `dokumenti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +260,7 @@ CREATE TABLE `poduzeca` (
 
 LOCK TABLES `poduzeca` WRITE;
 /*!40000 ALTER TABLE `poduzeca` DISABLE KEYS */;
-INSERT INTO `poduzeca` VALUES (1,'Prvo','M.Gupca 20','prvo@prvo.hr','prvo.hr','0971234567','040825456','Štef','vrlo važno poduzece',0,0),(2,'Drugo','Trg maršala tita','drugo@drugo.hr','drugo.hr','0991234567','042258789','Mirko','još važnije poduzece',1,1);
+INSERT INTO `poduzeca` VALUES (1,'Prvo','M.Gupca 20','prvo@prvo.hr','prvo.hr','0971234567','040825456','Štef','vrlo važno poduzece',0,0),(2,'Drugo','Trg maršala tita','drugo@drugo.hr','drugo.hr','0991234567','042258789','Mirko','još važnije poduzece',1,2);
 /*!40000 ALTER TABLE `poduzeca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +281,7 @@ CREATE TABLE `praksa` (
   `datumPocetka` date DEFAULT NULL,
   `datumKraja` date DEFAULT NULL,
   PRIMARY KEY (`idpraksa`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -292,7 +290,6 @@ CREATE TABLE `praksa` (
 
 LOCK TABLES `praksa` WRITE;
 /*!40000 ALTER TABLE `praksa` DISABLE KEYS */;
-INSERT INTO `praksa` VALUES (9,'1231231231232',2,0,0,2017,'2017-06-16','2017-06-16');
 /*!40000 ALTER TABLE `praksa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -326,7 +323,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES ('1231231231232','Marko','Markic','Markograd','marko@markic.com','123123123','Racunarstvo',1,'!2Asdf',1),('1234567890123','Ana','Anic','anina adresa','ana@anic.com','123456','Racunalstvo',2,'!2Asdf',0),('admin','admin','admin','admin','admin@admin.com','admin','Racunalstvo',0,'!2Asdf',0);
+INSERT INTO `student` VALUES ('1231231231232','Marko','Markic','Markograd','marko@markic.com','123123123','Racunarstvo',1,'!2Asdf',1),('1234567890123','Ana','Anic','anina adresa','ana@anic.com','123456','Racunalstvo',2,'!2Asdf',1),('admin','admin','admin','admin','admin@admin.com','admin','Racunalstvo',0,'!2Asdf',0);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -339,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-16 12:03:42
+-- Dump completed on 2017-06-29 15:54:59
