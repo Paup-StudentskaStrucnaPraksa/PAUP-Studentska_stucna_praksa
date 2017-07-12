@@ -64,10 +64,14 @@
                 @Html.DisplayFor(model => model.kraj)
             </dd>
         </dl>
-        <div>
-            @Html.ActionLink("Dodaj bilješku", "Zabiljeska", new { idpr = Model.id})
-            @Html.ActionLink("Dokumenti", "Dokumenti", new { id = Model.id })
-        </div>
+        @if (Model.zakljucano)
+        {
+            <div>
+                @Html.ActionLink("Dodaj bilješku", "Zabiljeska", new { idpr = Model.id })
+                @Html.ActionLink("Dokumenti", "Dokumenti", new { id = Model.id })
+            </div>
+        }
+
     </div>
 
 

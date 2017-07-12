@@ -18,6 +18,8 @@
                         <label class="col-md-2 control-label">E-mail</label>
                         <div class="col-md-10">
                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-10">
                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -25,6 +27,8 @@
                         <label class="col-md-2 control-label">Lozinka</label>
                         <div class="col-md-10">
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-10">
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>

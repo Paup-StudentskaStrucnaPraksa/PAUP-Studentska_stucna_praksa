@@ -15,8 +15,10 @@ namespace Praksa.Models
         [Required(ErrorMessage = "{0} je obavezan podatak")]
         [StringLength(13, MinimumLength = 11, ErrorMessage = "{0} treba imati {1} znamenki")]
         public string maticniBroj { get; set; }
+        [Required(ErrorMessage = "{0} je obavezan podatak")]
         [Display(Name = "Ime")]
         public string ime { get; set; }
+        [Required(ErrorMessage = "{0} je obavezan podatak")]
         [Display(Name = "Prezime")]
         public string prezime { get; set; }
         [Display(Name = "Adresa stanovanja")]

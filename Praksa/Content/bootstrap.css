@@ -2050,6 +2050,7 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: #333333;
+  padding: 10px;
   background-color: #ffffff;
   border-color: #cccccc;
 }

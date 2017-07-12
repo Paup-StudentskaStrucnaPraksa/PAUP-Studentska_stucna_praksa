@@ -121,7 +121,7 @@ namespace Praksa.Controllers
         [HttpPost]
         [Authorize(Roles = ("admin"))]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
+        public ActionResult Edit([Bind(Include = "id_poduzeca,nazivPoduzeca,adresa,mail,url,telefon,faks,odgovornaOsoba,opisPoduzeca")] Poduzeca poduzeca)
         {
             if (ModelState.IsValid)
             {
@@ -204,5 +204,6 @@ namespace Praksa.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }

@@ -14,80 +14,83 @@
     <title>Prijavi</title>
 </head>
 <body>
-        <h4>Prijavi praksu</h4>
+        <h4 class="center">Prijavi praksu</h4>
         <hr />
         @using (Html.BeginForm())
         {
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.nazivPoduzeca):
-            </dt>
+            <div class="center">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.nazivPoduzeca):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.nazivPoduzeca)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.adresa):
-            </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.nazivPoduzeca)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.adresa):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.adresa)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.adresa)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.mail):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.mail):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.mail)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.mail)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.url):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.url):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.url)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.url)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.telefon):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.telefon):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.telefon)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.telefon)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.faks):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.faks):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.faks)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.faks)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.odgovornaOsoba):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.odgovornaOsoba):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.odgovornaOsoba)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.odgovornaOsoba)
+                    </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.opisPoduzeca):
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.opisPoduzeca):
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.opisPoduzeca)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.opisPoduzeca)
+                    </dd>
 
-        </dl>
+                </dl>
 
-    <p>
-        @Html.ActionLink("Prijavi", "PrijaviP", new { id = Model.id_poduzeca}) |
-        @Html.ActionLink("Natrag", "Index")
-    </p>
+                <p>
+                    @Html.ActionLink("Prijavi", "PrijaviP", new { id = Model.id_poduzeca }) |
+                    @Html.ActionLink("Natrag", "Index")
+                </p>
+            </div>
+        
 }
 </body>
 </html>

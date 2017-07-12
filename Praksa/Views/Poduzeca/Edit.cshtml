@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Uredi</title>
 </head>
 <body>
     <div class="center">
@@ -20,9 +20,10 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>Poduzeca</h4>
+                <h4>@Html.DisplayFor(model =>model.nazivPoduzeca)</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.id_poduzeca)
                 @Html.HiddenFor(model => model.nazivPoduzeca)
 
                 <div class="form-group">
@@ -82,20 +83,18 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
+                    <div class="col-md-offset-2 col-md-10" style="margin-top:5px">
+                        <input type="submit" value="Spremi" class="btn btn-default" />
                     </div>
                 </div>
             </div>
         }
 
-        <div>
-            @Html.ActionLink("Back to List", "Index")
+        <div style="margin-top:5px">
+            @Html.ActionLink("Natrag", "Index") <text> | </text>
+            @Html.ActionLink("Obriši", "Delete", new { id = Model.id_poduzeca })
         </div>
-
-        <div>
-            @Html.ActionLink("Delete", "Delete", new { id = Model.nazivPoduzeca })
-        </div>
+            
         </div>
 </body>
 </html>

@@ -98,7 +98,7 @@
                         @if (User.IsInRole("admin"))
                             { 
                             <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.id_poduzeca })<text> | </text>
+                            @Html.ActionLink("Uredi", "Edit", new { id = item.id_poduzeca })<text> | </text>
                             @if (item.aktivno)
                             {
                                 @Html.ActionLink("Deaktiviraj", "AktivirajDeaktiviraj", new { id = item.id_poduzeca })
