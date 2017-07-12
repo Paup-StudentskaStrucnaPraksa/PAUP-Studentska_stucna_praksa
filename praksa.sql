@@ -142,7 +142,7 @@ CREATE TABLE `aspnetuserroles` (
 
 LOCK TABLES `aspnetuserroles` WRITE;
 /*!40000 ALTER TABLE `aspnetuserroles` DISABLE KEYS */;
-INSERT INTO `aspnetuserroles` VALUES ('44896c86-84be-46a6-95ce-023d5bb07b4c','dca18277-7a13-4a71-9d75-563388b82e49'),('850676f8-6f7e-4333-966d-3d32aac661a0','e0ab74a4-c674-4ede-8009-4da5a6420100'),('b4fe74f4-137f-432f-aa59-31bc3e5a999e','e0ab74a4-c674-4ede-8009-4da5a6420100');
+INSERT INTO `aspnetuserroles` VALUES ('44896c86-84be-46a6-95ce-023d5bb07b4c','dca18277-7a13-4a71-9d75-563388b82e49'),('0cb80b34-f59f-4471-baa6-fb3f09aaa228','e0ab74a4-c674-4ede-8009-4da5a6420100'),('b4fe74f4-137f-432f-aa59-31bc3e5a999e','e0ab74a4-c674-4ede-8009-4da5a6420100');
 /*!40000 ALTER TABLE `aspnetuserroles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +176,7 @@ CREATE TABLE `aspnetusers` (
 
 LOCK TABLES `aspnetusers` WRITE;
 /*!40000 ALTER TABLE `aspnetusers` DISABLE KEYS */;
-INSERT INTO `aspnetusers` VALUES ('44896c86-84be-46a6-95ce-023d5bb07b4c','admin@admin.com',0,'ANkLz9/GtLQWibfZh4rXYLSsiFQ5X2q09+1JIAq8AEM5MW8uPySbflRBZHAlpancXQ==','d4a9e7e1-de73-4c26-850b-041bb5b78ac3',NULL,0,0,NULL,1,0,'admin@admin.com'),('850676f8-6f7e-4333-966d-3d32aac661a0','ana@anic.com',0,'AERjAbbsXkoFLJ/g9xFhCZx9oinuHoX3fcKh7Gg1MfLmDWmWlFp5FXX+bIB75V6BdQ==','19b0f5a5-c228-4fca-9b65-2d34c842442f',NULL,0,0,NULL,1,0,'ana@anic.com'),('b4fe74f4-137f-432f-aa59-31bc3e5a999e','marko@markic.com',0,'ACms495vYDEnMqMD2LIPJhZ2DMw0+/VuK/iNOpqJLvJ4iwxR4LyEB2r5Fd04eYrTJw==','ff0e03e6-5f28-4223-aa6a-e452ab2839cc',NULL,0,0,NULL,1,0,'marko@markic.com');
+INSERT INTO `aspnetusers` VALUES ('0cb80b34-f59f-4471-baa6-fb3f09aaa228','ana@anic.com',0,'AEOWaQ5AOMg+gic0fp9HULTpFofS2A9Tii+3XK9Gib+ouW4dDz0IBmvx7N52YPT+5g==','28735653-9040-44b1-b46a-c5c522de8fb4',NULL,0,0,NULL,1,0,'ana@anic.com'),('44896c86-84be-46a6-95ce-023d5bb07b4c','admin@admin.com',0,'ANkLz9/GtLQWibfZh4rXYLSsiFQ5X2q09+1JIAq8AEM5MW8uPySbflRBZHAlpancXQ==','d4a9e7e1-de73-4c26-850b-041bb5b78ac3',NULL,0,0,NULL,1,0,'admin@admin.com'),('b4fe74f4-137f-432f-aa59-31bc3e5a999e','marko@markic.com',0,'ACms495vYDEnMqMD2LIPJhZ2DMw0+/VuK/iNOpqJLvJ4iwxR4LyEB2r5Fd04eYrTJw==','ff0e03e6-5f28-4223-aa6a-e452ab2839cc',NULL,0,0,NULL,1,0,'marko@markic.com');
 /*!40000 ALTER TABLE `aspnetusers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,7 @@ CREATE TABLE `dnevnik` (
   `zabiljeska` text,
   `datum` date NOT NULL,
   PRIMARY KEY (`iddnevnik`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `dokumenti` (
   `idprakse` int(11) NOT NULL,
   `put` text NOT NULL,
   PRIMARY KEY (`iddokumenti`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,9 +244,9 @@ CREATE TABLE `poduzeca` (
   `mail` varchar(20) DEFAULT NULL,
   `url` varchar(40) DEFAULT NULL,
   `telefon` varchar(20) DEFAULT NULL,
-  `faks` varchar(20) DEFAULT NULL,
+  `faks` varchar(20) DEFAULT '""',
   `odgovornaOsoba` varchar(20) DEFAULT NULL,
-  `opisPoduzeca` varchar(50) DEFAULT NULL,
+  `opisPoduzeca` varchar(50) DEFAULT '""',
   `aktivno` tinyint(4) NOT NULL DEFAULT '0',
   `brojStudenata` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_poduzeca`),
@@ -260,7 +260,7 @@ CREATE TABLE `poduzeca` (
 
 LOCK TABLES `poduzeca` WRITE;
 /*!40000 ALTER TABLE `poduzeca` DISABLE KEYS */;
-INSERT INTO `poduzeca` VALUES (1,'Prvo','M.Gupca 20','prvo@prvo.hr','prvo.hr','0971234567','040825456','Štef','vrlo važno poduzece',0,0),(2,'Drugo','Trg maršala tita','drugo@drugo.hr','drugo.hr','0991234567','042258789','Mirko','još važnije poduzece',1,2);
+INSERT INTO `poduzeca` VALUES (1,'Prvo','M.Gupca 20','prvo@prvo.hr','prvo.hr','0971234567','040825456','Štef','vrlo važno poduzec',0,0),(2,'Drugo','Trg maršala tita','drugo@drugo.hr','drugo.hr','0991234567','042258789','Mirko','još važnije poduzece',1,0);
 /*!40000 ALTER TABLE `poduzeca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,7 +281,7 @@ CREATE TABLE `praksa` (
   `datumPocetka` date DEFAULT NULL,
   `datumKraja` date DEFAULT NULL,
   PRIMARY KEY (`idpraksa`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -323,7 +323,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES ('1231231231232','Marko','Markic','Markograd','marko@markic.com','123123123','Racunarstvo',1,'!2Asdf',1),('1234567890123','Ana','Anic','anina adresa','ana@anic.com','123456','Racunalstvo',2,'!2Asdf',1),('admin','admin','admin','admin','admin@admin.com','admin','Racunalstvo',0,'!2Asdf',0);
+INSERT INTO `student` VALUES ('1231231231232','Marko','Markic','Markograd','marko@markic.com','12312312','Racunarstvo',1,'!2Asdf',0),('1234567890321','Ana','Anic','anina adresa','ana@anic.com','12389','OdrživiRazvoj',1,'!2Asdf',0),('admin','admin','admin','admin','admin@admin.com','admin','Racunalstvo',0,'!2Asdf',0);
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -336,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-29 15:54:59
+-- Dump completed on 2017-07-12 16:26:59
